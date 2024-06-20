@@ -146,9 +146,9 @@ class _LoginScreenState extends State<LoginPage> {
       setState(() {
         isValidating = false;
       });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Invalid credentials!')),
-      );
+      // ScaffoldMessenger.of(context).showSnackBar(
+      //   SnackBar(content: Text('Invalid credentials!')),
+      // );
     }
   }
 

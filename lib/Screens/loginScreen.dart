@@ -6,7 +6,7 @@ import 'package:motoveys/Screens/claimsDashboard.dart';
 import 'package:motoveys/Screens/loginPage.dart';
 
 class SplashScreen extends StatefulWidget {
-  const   SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   @override
 
@@ -21,10 +21,11 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => 
-            // DashboardPage()
-            LoginPage()
-            )));
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    // DashboardPage()
+                    LoginPage())));
   }
 
   @override

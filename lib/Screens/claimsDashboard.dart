@@ -151,7 +151,7 @@
 //             letterSpacing: 2),
 //         centerTitle: false,
 //         backgroundColor: Color(0xFF610361),
-//         iconTheme: IconThemeData(color: Colors.white), 
+//         iconTheme: IconThemeData(color: Colors.white),
 //         // leading: IconButton(
 //         //   icon: Icon(Icons.menu),
 //         //   onPressed: () {
@@ -467,10 +467,7 @@
 //   );
 // }
 
-
 // //***************** */
-
-
 
 import 'package:flutter/material.dart';
 import 'package:motoveys/Screens/claimProcessing.dart';
@@ -589,9 +586,10 @@ class _DashboardPageState extends State<DashboardPage> {
                 leading: const Icon(Icons.person),
                 title: const Text("Log Out"),
                 onTap: () {
-                   Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginPage()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
                   print("Logout clicked!");
                 },
               ),
@@ -628,7 +626,6 @@ class _DashboardPageState extends State<DashboardPage> {
         ],
       ),
       body: Padding(
-        
         padding: EdgeInsets.all(16.0),
         child: ListView.builder(
           itemCount: _filteredData.length,
@@ -653,6 +650,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             color: Color.fromARGB(255, 165, 11, 152))),
                     elevation: 10,
                     color: Colors.white,
+                    surfaceTintColor: Colors.transparent,
                     margin: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -783,26 +781,24 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Widget _buildSearchField() {
-    return Expanded(
-      child: TextField(
-        style: TextStyle(color: Colors.black),
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          hintText: 'Search...',
-          hintStyle: TextStyle(color: Colors.black54),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide.none,
-          ),
-          contentPadding: EdgeInsets.symmetric(horizontal: 15),
+    return TextField(
+      style: TextStyle(color: Colors.black),
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.white,
+        hintText: 'Search...',
+        hintStyle: TextStyle(color: Colors.black54),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none,
         ),
-        autofocus: true,
-        textInputAction: TextInputAction.search,
-        onChanged: (value) {
-          _filterData(value);
-        },
+        contentPadding: EdgeInsets.symmetric(horizontal: 15),
       ),
+      autofocus: true,
+      textInputAction: TextInputAction.search,
+      onChanged: (value) {
+        _filterData(value);
+      },
     );
   }
 }
